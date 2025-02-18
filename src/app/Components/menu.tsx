@@ -68,7 +68,7 @@ export default function Menu() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <header className="bg-white">
+    <header className="bg-transparent')]">
       <nav
         aria-label="Global"
         className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8"
@@ -103,7 +103,7 @@ export default function Menu() {
           <a href="#" className="text-sm/6 font-semibold text-gray-900">
             Loom Tour
           </a>
-          <a href="#" className="text-sm/6 font-semibold text-gray-900">
+          <a href="/Store" className="text-sm/6 font-semibold text-gray-900">
             Store
           </a>
         </PopoverGroup>

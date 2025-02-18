@@ -11,12 +11,22 @@ const products = [
     price: "$35",
     color: "Black",
   },
+  {
+    id: 2,
+    name: "We are Groot Case",
+    href: "#",
+    imageSrc:
+      "https://cdn-image02.casetify.com/usr/23883/45533883/~v114/33101963_iphone-16-pro-max__color_white-titanium_16007207.png.500x500-r.m80.webp",
+    imageAlt: "Front of men's Basic Tee in black.",
+    price: "$50",
+    color: "N",
+  },
   // More products...
 ];
 
 export default function Store() {
   return (
-    <div className="bg-white">
+    <div className="bg-[url('https://wallpapercave.com/wp/wp14699777.jpg')] bg-cover bg-center min-h-screen">
       <Menu />
       <div className="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
         <h2 className="text-2xl font-bold tracking-tight text-gray-900">
