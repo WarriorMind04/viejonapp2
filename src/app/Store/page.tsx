@@ -36,7 +36,7 @@ const products = [
     name: "Mercury (Shirt)",
     href: "#",
     imageSrc:
-      "  https://udiscover.mx/cdn/shop/files/Image20230706155758.png?v=1739318885&width=600",
+      "https://udiscover.mx/cdn/shop/files/Image20230706155758.png?v=1739318885&width=600",
     imageAlt: "Mercury Black Shirt",
     price: "$350",
     color: "Black",
@@ -46,45 +46,45 @@ const products = [
     name: "Night Visions Vynil",
     href: "#",
     imageSrc:
-      "  https://udiscover.mx/cdn/shop/products/602537158904_Imagine_Dragons.jpg?v=1739318775&width=1200",
+      "https://udiscover.mx/cdn/shop/products/602537158904_Imagine_Dragons.jpg?v=1739318775&width=1200",
     imageAlt: "Night Visions Vynil First Edition",
     price: "$375",
     color: "N/A",
   },
-
-  // More products...
 ];
 
 export default function Store() {
   return (
     <div className="bg-[url('https://wallpapercave.com/wp/wp14699777.jpg')] bg-cover bg-center min-h-screen">
       <Menu />
-      <div className="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
-        <h2 className="text-2xl font-bold tracking-tight text-white">
+      <div className="mx-auto max-w-4xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
+        <h2 className="text-2xl font-bold tracking-tight text-white text-center">
           Become a firebreather
         </h2>
 
-        <div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
-          {products.map((product) => (
-            <div key={product.id} className="group relative">
+        <div className="mt-6 space-y-10">
+          {products.map((product, index) => (
+            <div
+              key={product.id}
+              className={`flex flex-col sm:flex-row items-center gap-6 ${
+                index % 2 === 0 ? "sm:flex-row" : "sm:flex-row-reverse"
+              }`}
+            >
               <img
                 alt={product.imageAlt}
                 src={product.imageSrc}
-                className="aspect-square w-full rounded-md bg-gray-200 object-cover group-hover:opacity-75 lg:aspect-auto lg:h-80"
+                className="w-48 h-48 rounded-md bg-gray-200 object-cover"
               />
-              <div className="mt-4 flex justify-between">
-                <div>
-                  <h3 className="text-sm text-white">
-                    <a href={product.href}>
-                      <span aria-hidden="true" className="absolute inset-0" />
-                      {product.name}
-                    </a>
-                  </h3>
-                  <p className="mt-1 text-sm text-black">{product.color}</p>
-                </div>
-                <p className="text-sm font-medium text-white">
-                  {product.price}
+              <div className="text-white max-w-sm">
+                <h3 className="text-lg font-bold">
+                  <a href={product.href} className="hover:underline">
+                    {product.name}
+                  </a>
+                </h3>
+                <p className="mt-1 text-sm text-gray-300">
+                  Color: {product.color}
                 </p>
+                <p className="text-sm font-medium mt-2">{product.price}</p>
               </div>
             </div>
           ))}
